@@ -1,0 +1,47 @@
+services:
+  # Backend Service (Motia)
+  - type: web
+    name: contentflow-backend
+    env: node
+    region: oregon
+    plan: free
+    rootDir: content-flow
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MISTRAL_API_KEY
+        sync: false  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+
+  # Frontend Service (Next.js)
+  - type: web
+    name: contentflow-frontend
+    env: node
+    region: oregon
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+        sync: false  # Set this in Render dashboard (production keys)
+      - key: CLERK_SECRET_KEY
+        sync: false  # Set this in Render dashboard (production keys)
+      - key: MOTIA_BACKEND_URL
+        fromService:
+          type: web
+          name: contentflow-backend
+          property: host
+      - key: NEXT_PUBLIC_MOTIA_BACKEND_URL
+        fromService:
+          type: web
+          name: contentflow-backend
+          property: host
+    healthCheckPath: /api/health
+

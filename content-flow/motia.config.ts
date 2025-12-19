@@ -7,4 +7,14 @@ import bullmqPlugin from '@motiadev/plugin-bullmq/plugin'
 
 export default defineConfig({
   plugins: [observabilityPlugin, statesPlugin, endpointPlugin, logsPlugin, bullmqPlugin],
+  app: (app) => {
+    // Health check endpoint for Render and other deployment platforms
+    app.get('/health', (_req, res) => {
+      res.json({ 
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        service: 'contentflow-backend'
+      })
+    })
+  },
 })
