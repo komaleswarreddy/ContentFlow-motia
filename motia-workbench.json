@@ -1,0 +1,63 @@
+[
+  {
+    "id": "content-workflow",
+    "config": {
+      "src\\steps\\events\\validate-content.step.ts": {
+        "x": 385,
+        "y": 739
+      },
+      "src\\steps\\events\\generate-recommendations.step.ts": {
+        "x": 834,
+        "y": 739
+      },
+      "src\\steps\\events\\generate-improved-content.step.ts": {
+        "x": 350,
+        "y": 1286
+      },
+      "src\\steps\\events\\analyze-with-ai.step.ts": {
+        "x": 633,
+        "y": 739
+      },
+      "src\\steps\\crons\\daily-processing.step.ts": {
+        "x": 70,
+        "y": 0
+      },
+      "src\\steps\\api\\vote-recommendation.step.ts": {
+        "x": 0,
+        "y": 148
+      },
+      "src\\steps\\api\\request-content-improvement.step.ts": {
+        "x": 25,
+        "y": 1252
+      },
+      "src\\steps\\api\\list-content.step.ts": {
+        "x": 84,
+        "y": 472
+      },
+      "src\\steps\\api\\get-content.step.ts": {
+        "x": 79,
+        "y": 624
+      },
+      "src\\steps\\api\\get-comments.step.ts": {
+        "x": 41,
+        "y": 776
+      },
+      "src\\steps\\api\\delete-content.step.ts": {
+        "x": 66,
+        "y": 928
+      },
+      "src\\steps\\api\\create-content.step.ts": {
+        "x": 73,
+        "y": 320
+      },
+      "src\\steps\\api\\apply-improved-content.step.ts": {
+        "x": 0,
+        "y": 1080
+      },
+      "src\\steps\\api\\add-comment.step.ts": {
+        "x": 37,
+        "y": 1404
+      }
+    }
+  }
+]

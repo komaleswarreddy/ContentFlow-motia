@@ -1,0 +1,26 @@
+{
+  "name": "content-flow",
+  "version": "1.0.0",
+  "description": "AI-powered content workflow with Motia",
+  "type": "module",
+  "scripts": {
+    "dev": "motia dev",
+    "build": "motia build",
+    "deploy": "motia deploy"
+  },
+  "dependencies": {
+    "@mistralai/mistralai": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "motia": "latest",
+    "@motiadev/core": "0.17.9-beta.191",
+    "@motiadev/plugin-logs": "0.17.9-beta.191",
+    "@motiadev/plugin-states": "0.17.9-beta.191",
+    "@motiadev/plugin-endpoint": "0.17.9-beta.191",
+    "@motiadev/plugin-observability": "0.17.9-beta.191",
+    "@motiadev/plugin-bullmq": "0.17.9-beta.191"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}
