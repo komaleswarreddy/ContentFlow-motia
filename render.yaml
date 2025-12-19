@@ -6,7 +6,7 @@ services:
     region: oregon
     plan: free
     rootDir: content-flow
-    buildCommand: npm install && npm run build
+    buildCommand: NODE_OPTIONS="--max-old-space-size=384" npm ci --prefer-offline --no-audit --ignore-scripts && NODE_OPTIONS="--max-old-space-size=384" npm run postinstall && NODE_OPTIONS="--max-old-space-size=384" npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_ENV
@@ -24,7 +24,7 @@ services:
     region: oregon
     plan: free
     rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: NODE_OPTIONS="--max-old-space-size=384" npm ci --prefer-offline --no-audit && NODE_OPTIONS="--max-old-space-size=384" npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_ENV
